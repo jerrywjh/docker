@@ -26,7 +26,6 @@ sudo docker run -d -p 80:80 -p 443:443 \
   --mount source=cube_log,target=/opt/cubebackup/log \
   --name cubebackup \
   cubebackup/cubebackup
-  
 ```
 
 After the docker container is started, open http://\<host_IP\> to see the configuration wizard of CubeBackup.
