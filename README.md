@@ -18,9 +18,18 @@ docker run -d -p 80:80  cubebackup/cubebackup
 
 ## Attach persistent directories
 ```
-docker run -d  -p 80:80  -v <backup_dir_on_host>:/cubebackup_data -v <data_index_dir_on_host>:/cubebackup_index --mount source=cubebackup_cfg,target=/opt/cubebackup  --name cubebackup  cubebackup/cubebackup
+sudo docker run -d -p 80:80 -p 443:443 \
+  -v <data_index_dir_on_host>:/cubebackup_index \
+  -v <backup_dir_on_host>:/cubebackup_data \
+  --mount source=cube_cfg,target=/opt/cubebackup/etc \
+  --mount source=cube_db,target=/opt/cubebackup/db \
+  --mount source=cube_log,target=/opt/cubebackup/log \
+  --name cubebackup \
+  cubebackup/cubebackup
+  
 ```
+
 After the docker container is started, open http://\<host_IP\> to see the configuration wizard of CubeBackup.
 
-For more detailed instruction on how to start CubeBackup in a docker container, please visit [this doc](https://www.cubebackup.com/docs/user_guide/installation/#for-docker-users)
+For more detailed instructions on how to start CubeBackup in a docker container, please visit [CubeBackup docker installation doc](https://www.cubebackup.com/docs/user_guide/installation/#for-docker-users)
 
