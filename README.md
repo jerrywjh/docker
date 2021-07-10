@@ -28,7 +28,7 @@ sudo docker run -d -p 80:80 -p 443:443 \
   cubebackup/cubebackup
 ```
 
-After the docker container is started, open http://\<host_IP\> to see the configuration wizard of CubeBackup.
+After the docker container is started, open *http://\<host_IP\>* to start the configuration wizard of CubeBackup.
 
 For more detailed instructions on how to start CubeBackup in a docker container, please visit [CubeBackup docker installation doc](https://www.cubebackup.com/docs/user_guide/installation/#for-docker-users)
 
